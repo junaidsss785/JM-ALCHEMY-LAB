@@ -294,6 +294,48 @@
     "recipe": null
   },
   {
+    "id": "u",
+    "name": "Uranium",
+    "formula": "U",
+    "category": "Actinide",
+    "iconSymbol": "☢️",
+    "themeColor": "0xFF39FF14",
+    "atomicNumber": 92,
+    "atomicMass": 238.03,
+    "stateOfMatter": "Solid",
+    "realWorldUse": "Nuclear power plant fuel and military armor penetration",
+    "bondingType": "Metallic",
+    "recipe": null
+  },
+  {
+    "id": "kr",
+    "name": "Krypton",
+    "formula": "Kr",
+    "category": "Noble Gas",
+    "iconSymbol": "🟢",
+    "themeColor": "0xFF50C878",
+    "atomicNumber": 36,
+    "atomicMass": 83.798,
+    "stateOfMatter": "Gas",
+    "realWorldUse": "High-speed photography flashes and airport runway lights",
+    "bondingType": "Atomic",
+    "recipe": null
+  },
+  {
+    "id": "xe",
+    "name": "Xenon",
+    "formula": "Xe",
+    "category": "Noble Gas",
+    "iconSymbol": "🔵",
+    "themeColor": "0xFF007FFF",
+    "atomicNumber": 54,
+    "atomicMass": 131.29,
+    "stateOfMatter": "Gas",
+    "realWorldUse": "Ion propulsion thrusters in spacecraft and flash lamps",
+    "bondingType": "Atomic",
+    "recipe": null
+  },
+  {
     "id": "he",
     "name": "Helium",
     "formula": "He",
@@ -880,5 +922,33 @@
     "realWorldUse": "Water treatment disinfectant and wound antiseptics",
     "bondingType": "Ionic",
     "recipe": ["koh", "o2"]
+  },
+  {
+    "id": "uf6",
+    "name": "Uranium Hexafluoride",
+    "formula": "UF₆",
+    "category": "Actinide Compound",
+    "iconSymbol": "☢️",
+    "themeColor": "0xFF7FFF00",
+    "atomicNumber": 146,
+    "atomicMass": 352.02,
+    "stateOfMatter": "Solid",
+    "realWorldUse": "Uranium enrichment process for nuclear reactor fuel",
+    "bondingType": "Covalent",
+    "recipe": ["u", "f2"]
+  },
+  {
+    "id": "tio2",
+    "name": "Titanium Dioxide",
+    "formula": "TiO₂",
+    "category": "Oxide",
+    "iconSymbol": "⚪",
+    "themeColor": "0xFFFFFFFF",
+    "atomicNumber": 38,
+    "atomicMass": 79.866,
+    "stateOfMatter": "Solid",
+    "realWorldUse": "White pigment in paints, sunscreens, and food coloring",
+    "bondingType": "Ionic",
+    "recipe": ["ti", "o2"]
   }
 ]
