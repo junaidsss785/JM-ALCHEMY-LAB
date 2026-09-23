@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
+import 'data/chemistry_database.dart';
 import 'screens/home_screen.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  // JSON سے تمام کیمیکل ردِعمل اور ایلیمنٹس لوڈ کریں
+  await JMAlchemyDatabase.loadDatabase();
   runApp(const JMAlchemyLabApp());
 }
 
