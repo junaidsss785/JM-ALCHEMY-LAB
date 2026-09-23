@@ -252,6 +252,48 @@
     "recipe": null
   },
   {
+    "id": "hg",
+    "name": "Mercury",
+    "formula": "Hg",
+    "category": "Transition Metal",
+    "iconSymbol": "🌡️",
+    "themeColor": "0xFFB0C4DE",
+    "atomicNumber": 80,
+    "atomicMass": 200.59,
+    "stateOfMatter": "Liquid",
+    "realWorldUse": "Traditional thermometers, barometers, and electrical switches",
+    "bondingType": "Metallic",
+    "recipe": null
+  },
+  {
+    "id": "pt",
+    "name": "Platinum",
+    "formula": "Pt",
+    "category": "Transition Metal",
+    "iconSymbol": "💍",
+    "themeColor": "0xFFE5E4E2",
+    "atomicNumber": 78,
+    "atomicMass": 195.08,
+    "stateOfMatter": "Solid",
+    "realWorldUse": "Catalytic converters in vehicles and fine jewelry",
+    "bondingType": "Metallic",
+    "recipe": null
+  },
+  {
+    "id": "ti",
+    "name": "Titanium",
+    "formula": "Ti",
+    "category": "Transition Metal",
+    "iconSymbol": "🚀",
+    "themeColor": "0xFF878F99",
+    "atomicNumber": 22,
+    "atomicMass": 47.867,
+    "stateOfMatter": "Solid",
+    "realWorldUse": "Aerospace structural components and medical bone implants",
+    "bondingType": "Metallic",
+    "recipe": null
+  },
+  {
     "id": "he",
     "name": "Helium",
     "formula": "He",
@@ -434,6 +476,48 @@
     "recipe": ["c", "h2"]
   },
   {
+    "id": "c2h6",
+    "name": "Ethane",
+    "formula": "C₂H₆",
+    "category": "Organic Compound",
+    "iconSymbol": "⛽",
+    "themeColor": "0xFF7F5539",
+    "atomicNumber": 18,
+    "atomicMass": 30.07,
+    "stateOfMatter": "Gas",
+    "realWorldUse": "Petrochemical feedstock for ethylene plastic production",
+    "bondingType": "Covalent",
+    "recipe": ["ch4", "c"]
+  },
+  {
+    "id": "c2h4",
+    "name": "Ethylene",
+    "formula": "C₂H₄",
+    "category": "Organic Compound",
+    "iconSymbol": "🍌",
+    "themeColor": "0xFF55A630",
+    "atomicNumber": 16,
+    "atomicMass": 28.05,
+    "stateOfMatter": "Gas",
+    "realWorldUse": "Plant hormone for fruit ripening and polyethylene manufacturing",
+    "bondingType": "Covalent",
+    "recipe": ["c2h6", "o2"]
+  },
+  {
+    "id": "c2h2",
+    "name": "Acetylene",
+    "formula": "C₂H₂",
+    "category": "Organic Compound",
+    "iconSymbol": "💥",
+    "themeColor": "0xFFFFA500",
+    "atomicNumber": 14,
+    "atomicMass": 26.04,
+    "stateOfMatter": "Gas",
+    "realWorldUse": "Oxy-acetylene torch fuel for high-temperature metal welding",
+    "bondingType": "Covalent",
+    "recipe": ["ch4", "o2"]
+  },
+  {
     "id": "nh3",
     "name": "Ammonia",
     "formula": "NH₃",
@@ -597,7 +681,7 @@
     "atomicNumber": 18,
     "atomicMass": 32.04,
     "stateOfMatter": "Liquid",
-    "realWorldUse": "Industrial solvent, antifreeze, and racing fuel fuel",
+    "realWorldUse": "Industrial solvent, antifreeze, and racing fuel",
     "bondingType": "Covalent",
     "recipe": ["co", "h2"]
   },
@@ -628,6 +712,20 @@
     "realWorldUse": "Fuel for outdoor barbecue grills and portable stoves",
     "bondingType": "Covalent",
     "recipe": ["ch4", "c"]
+  },
+  {
+    "id": "c4h10",
+    "name": "Butane",
+    "formula": "C₄H₁₀",
+    "category": "Organic Gas",
+    "iconSymbol": "🔥",
+    "themeColor": "0xFFDDA15E",
+    "atomicNumber": 34,
+    "atomicMass": 58.12,
+    "stateOfMatter": "Gas",
+    "realWorldUse": "Pocket lighter fuel and aerosol spray propellant",
+    "bondingType": "Covalent",
+    "recipe": ["c3h8", "c"]
   },
   {
     "id": "hno3",
@@ -754,5 +852,33 @@
     "realWorldUse": "Glass manufacturing, laundry water softening, and detergents",
     "bondingType": "Ionic",
     "recipe": ["nahco3", "cao"]
+  },
+  {
+    "id": "kno3",
+    "name": "Potassium Nitrate (Saltpeter)",
+    "formula": "KNO₃",
+    "category": "Salt / Nitrate",
+    "iconSymbol": "🎆",
+    "themeColor": "0xFFE63946",
+    "atomicNumber": 48,
+    "atomicMass": 101.10,
+    "stateOfMatter": "Solid",
+    "realWorldUse": "Gunpowder formulation, tree stump remover, and plant fertilizer",
+    "bondingType": "Ionic",
+    "recipe": ["koh", "hno3"]
+  },
+  {
+    "id": "kmno4",
+    "name": "Potassium Permanganate",
+    "formula": "KMnO₄",
+    "category": "Salt / Oxidizer",
+    "iconSymbol": "🔮",
+    "themeColor": "0xFF800080",
+    "atomicNumber": 58,
+    "atomicMass": 158.03,
+    "stateOfMatter": "Solid",
+    "realWorldUse": "Water treatment disinfectant and wound antiseptics",
+    "bondingType": "Ionic",
+    "recipe": ["koh", "o2"]
   }
 ]
