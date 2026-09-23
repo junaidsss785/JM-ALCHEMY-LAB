@@ -24,20 +24,14 @@ jobs:
         with:
           channel: 'stable'
 
-      - name: Generate Android Folder
-        run: flutter create --platforms=android --org=com.jm.alchemy .
-
       - name: Install Dependencies
         run: flutter pub get
 
-      - name: Analyze Project
-        run: flutter analyze || true
-
-      - name: Build APK
-        run: flutter build apk --release --verbose
+      - name: Build Release APK
+        run: flutter build apk --release
 
       - name: Upload APK Artifact
         uses: actions/upload-artifact@v4
         with:
-          name: release-apk
-          path: '**/build/app/outputs/flutter-apk/app-release.apk'
+          name: JM-Alchemy-Release
+          path: build/app/outputs/flutter-apk/app-release.apk
