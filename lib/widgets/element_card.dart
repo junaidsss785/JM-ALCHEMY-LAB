@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../models/element_model.dart';
+import '../screens/atom_visualizer_screen.dart';
 
 class ElementCard extends StatelessWidget {
   final ElementModel element;
@@ -15,6 +16,14 @@ class ElementCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: onTap,
+      onLongPress: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => AtomVisualizerScreen(element: element),
+          ),
+        );
+      },
       borderRadius: BorderRadius.circular(12),
       child: Container(
         decoration: BoxDecoration(
