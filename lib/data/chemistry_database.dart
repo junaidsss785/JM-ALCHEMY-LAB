@@ -5,7 +5,7 @@ import '../models/element_model.dart';
 class JMAlchemyDatabase {
   static Map<String, ElementModel> elements = {};
 
-  // JSON asset سے تمام کیمیکلز لوڈ کرنے کا فنکشن
+  // Function to load all chemistry elements from JSON asset
   static Future<void> loadDatabase() async {
     final String response = await rootBundle.loadString('assets/data/reactions.json');
     final List<dynamic> data = json.decode(response);
@@ -17,7 +17,7 @@ class JMAlchemyDatabase {
     }
   }
 
-  // دو ایلیمنٹس کو کمبائن کرنے کی لاجک
+  // Logic to combine two elements
   static ElementModel? combineElements(String id1, String id2) {
     for (var element in elements.values) {
       if (element.recipe != null && element.recipe!.length == 2) {
