@@ -4,7 +4,7 @@ import 'screens/home_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  // JSON سے تمام کیمیکل ردِعمل اور ایلیمنٹس لوڈ کریں
+  // Load chemical database before running the app
   await JMAlchemyDatabase.loadDatabase();
   runApp(const JMAlchemyLabApp());
 }
