@@ -1,0 +1,155 @@
+import 'package:flutter/material.dart';
+import '../models/element_model.dart';
+
+class JMAlchemyDatabase {
+  static final Map<String, ElementModel> elements = {
+    // Base Elements
+    'h2': ElementModel(
+      id: 'h2',
+      name: 'Hydrogen',
+      formula: 'H₂',
+      category: 'Non-metal',
+      iconSymbol: '🎈',
+      themeColor: const Color(0xFF4CC9F0),
+      atomicNumber: 1,
+      atomicMass: 1.008,
+      stateOfMatter: 'Gas',
+      realWorldUse: 'Rocket fuel and clean energy cells',
+      bondingType: 'Covalent',
+    ),
+    'o2': ElementModel(
+      id: 'o2',
+      name: 'Oxygen',
+      formula: 'O₂',
+      category: 'Non-metal',
+      iconSymbol: '🌬️',
+      themeColor: const Color(0xFF4895EF),
+      atomicNumber: 8,
+      atomicMass: 15.999,
+      stateOfMatter: 'Gas',
+      realWorldUse: 'Essential for cellular respiration and combustion',
+      bondingType: 'Covalent',
+    ),
+    'c': ElementModel(
+      id: 'c',
+      name: 'Carbon',
+      formula: 'C',
+      category: 'Non-metal',
+      iconSymbol: '💎',
+      themeColor: const Color(0xFF7209B7),
+      atomicNumber: 6,
+      atomicMass: 12.011,
+      stateOfMatter: 'Solid',
+      realWorldUse: 'Basis of all organic life, graphite, and diamonds',
+      bondingType: 'Covalent',
+    ),
+    'n2': ElementModel(
+      id: 'n2',
+      name: 'Nitrogen',
+      formula: 'N₂',
+      category: 'Non-metal',
+      iconSymbol: '❄️',
+      themeColor: const Color(0xFF3F37C9),
+      atomicNumber: 7,
+      atomicMass: 14.007,
+      stateOfMatter: 'Gas',
+      realWorldUse: 'Makes up 78% of Earth\'s atmosphere, used in fertilizers',
+      bondingType: 'Covalent',
+    ),
+    'fe': ElementModel(
+      id: 'fe',
+      name: 'Iron',
+      formula: 'Fe',
+      category: 'Transition Metal',
+      iconSymbol: '⚙️',
+      themeColor: const Color(0xFF8D99AE),
+      atomicNumber: 26,
+      atomicMass: 55.845,
+      stateOfMatter: 'Solid',
+      realWorldUse: 'Structural steel construction and hemoglobin in blood',
+      bondingType: 'Metallic',
+    ),
+    'na': ElementModel(
+      id: 'na',
+      name: 'Sodium',
+      formula: 'Na',
+      category: 'Alkali Metal',
+      iconSymbol: '⚡',
+      themeColor: const Color(0xFFF72585),
+      atomicNumber: 11,
+      atomicMass: 22.990,
+      stateOfMatter: 'Solid',
+      realWorldUse: 'Highly reactive metal, vital electrolyte for nerve signals',
+      bondingType: 'Metallic',
+    ),
+    'cl2': ElementModel(
+      id: 'cl2',
+      name: 'Chlorine',
+      formula: 'Cl₂',
+      category: 'Halogen',
+      iconSymbol: '🧪',
+      themeColor: const Color(0xFF403D39),
+      atomicNumber: 17,
+      atomicMass: 35.45,
+      stateOfMatter: 'Gas',
+      realWorldUse: 'Water disinfection and manufacture of PVC plastics',
+      bondingType: 'Covalent',
+    ),
+
+    // Created Compounds
+    'h2o': ElementModel(
+      id: 'h2o',
+      name: 'Water',
+      formula: 'H₂O',
+      category: 'Compound',
+      iconSymbol: '💧',
+      themeColor: const Color(0xFF00B4D8),
+      atomicNumber: 10,
+      atomicMass: 18.015,
+      stateOfMatter: 'Liquid',
+      realWorldUse: 'Universal solvent essential for all known forms of life',
+      bondingType: 'Polar Covalent',
+      recipe: ['h2', 'o2'],
+    ),
+    'nacl': ElementModel(
+      id: 'nacl',
+      name: 'Table Salt',
+      formula: 'NaCl',
+      category: 'Salt / Ionic',
+      iconSymbol: '🧂',
+      themeColor: const Color(0xFFE0E1DD),
+      atomicNumber: 28,
+      atomicMass: 58.44,
+      stateOfMatter: 'Solid',
+      realWorldUse: 'Food seasoning and industrial chemical feedstock',
+      bondingType: 'Ionic',
+      recipe: ['na', 'cl2'],
+    ),
+    'co2': ElementModel(
+      id: 'co2',
+      name: 'Carbon Dioxide',
+      formula: 'CO₂',
+      category: 'Gas',
+      iconSymbol: '☁️',
+      themeColor: const Color(0xFF52B788),
+      atomicNumber: 22,
+      atomicMass: 44.01,
+      stateOfMatter: 'Gas',
+      realWorldUse: 'Plant photosynthesis and carbonated beverages',
+      bondingType: 'Covalent',
+      recipe: ['c', 'o2'],
+    ),
+  };
+
+  static ElementModel? combineElements(String id1, String id2) {
+    for (var element in elements.values) {
+      if (element.recipe != null && element.recipe!.length == 2) {
+        if ((element.recipe![0] == id1 && element.recipe![1] == id2) ||
+            (element.recipe![0] == id2 && element.recipe![1] == id1)) {
+          return element;
+        }
+      }
+    }
+    return null;
+  }
+}
