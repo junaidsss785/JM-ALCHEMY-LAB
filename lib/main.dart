@@ -1,26 +1,21 @@
 import 'package:flutter/material.dart';
-import 'data/chemistry_database.dart';
 import 'screens/home_screen.dart';
 
-void main() async {
-  WidgetsFlutterBinding.ensureInitialized();
-  // Load chemical database before running the app
-  await JMAlchemyDatabase.loadDatabase();
-  runApp(const JMAlchemyLabApp());
+void main() {
+  runApp(const JMAlchemyApp());
 }
 
-class JMAlchemyLabApp extends StatelessWidget {
-  const JMAlchemyLabApp({super.key});
+class JMAlchemyApp extends StatelessWidget {
+  const JMAlchemyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'JM Alchemy Lab',
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        brightness: Brightness.dark,
-        scaffoldBackgroundColor: const Color(0xFF0F141C),
-        useMaterial3: true,
+      theme: ThemeData.dark().copyWith(
+        scaffoldBackgroundColor: const Color(0xFF0F2027),
+        primaryColor: Colors.cyanAccent,
       ),
       home: const HomeScreen(),
     );
