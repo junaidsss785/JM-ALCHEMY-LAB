@@ -6,10 +6,30 @@ import 'lab_experiment_screen.dart';
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
-  Future<List<dynamic>> _loadElements(BuildContext context) async {
-    final String response = await rootBundle.loadString('assets/data/reactions.json');
-    final data = await json.decode(response);
-    return data['elements'] ?? [];
+  Future<List<dynamic>> _loadElements() async {
+    try {
+      final String response = await rootBundle.loadString('assets/data/reactions.json');
+      final data = await json.decode(response);
+      if (data != null && data['elements'] != null) {
+        return List<dynamic>.from(data['elements']);
+      }
+    } catch (e) {
+      debugPrint('Error loading JSON: $e');
+    }
+
+    // ڈیفالٹ ایلیمنٹس اگر JSON لوڈ نہ ہو سکے
+    return [
+      {'name': 'Hydrogen', 'symbol': 'H', 'number': 1},
+      {'name': 'Helium', 'symbol': 'He', 'number': 2},
+      {'name': 'Lithium', 'symbol': 'Li', 'number': 3},
+      {'name': 'Beryllium', 'symbol': 'Be', 'number': 4},
+      {'name': 'Boron', 'symbol': 'B', 'number': 5},
+      {'name': 'Carbon', 'symbol': 'C', 'number': 6},
+      {'name': 'Nitrogen', 'symbol': 'N', 'number': 7},
+      {'name': 'Oxygen', 'symbol': 'O', 'number': 8},
+      {'name': 'Fluorine', 'symbol': 'F', 'number': 9},
+      {'name': 'Neon', 'symbol': 'Ne', 'number': 10},
+    ];
   }
 
   @override
@@ -71,7 +91,7 @@ class HomeScreen extends StatelessWidget {
                   const SizedBox(height: 50),
                   ElevatedButton(
                     onPressed: () async {
-                      final elements = await _loadElements(context);
+                      final elements = await _loadElements();
                       if (context.mounted) {
                         Navigator.push(
                           context,
