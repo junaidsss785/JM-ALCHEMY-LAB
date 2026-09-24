@@ -1,8 +1,16 @@
+import 'dart:convert';
 import 'package:flutter/material.dart';
-import 'atom_visualizer_screen.dart';
+import 'package:flutter/services.dart';
+import 'lab_experiment_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
+
+  Future<List<dynamic>> _loadElements(BuildContext context) async {
+    final String response = await rootBundle.loadString('assets/data/reactions.json');
+    final data = await json.decode(response);
+    return data['elements'] ?? [];
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -62,13 +70,16 @@ class HomeScreen extends StatelessWidget {
                   ),
                   const SizedBox(height: 50),
                   ElevatedButton(
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => const AtomVisualizerScreen(),
-                        ),
-                      );
+                    onPressed: () async {
+                      final elements = await _loadElements(context);
+                      if (context.mounted) {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => LabExperimentScreen(elements: elements),
+                          ),
+                        );
+                      }
                     },
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.cyanAccent,
